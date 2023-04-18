@@ -26,6 +26,10 @@ sources:
       - "https://www.openssl.org/source/openssl-1.1.1t.tar.gz"
       - "https://www.openssl.org/source/old/1.1.1/openssl-1.1.1t.tar.gz"
       - "https://github.com/openssl/openssl/releases/download/OpenSSL_1_1_1t/openssl-1.1.1t.tar.gz"
+  1.1.1t+quic:
+    sha256: 4e23619f73688144f2cd808e9567504c3bf10cb67ad9551280530fd54ca913e1
+    url:
+      - "https://github.com/quictls/openssl/archive/refs/tags/OpenSSL_1_1_1t-quic1.tar.gz"
 patches:
   1.0.2u:
     - patch_file: patches/1.0.2u-darwin-arm64.patch
@@ -40,6 +44,10 @@ patches:
       patch_description: "TVOS and WatchOS don't like fork()"
       patch_type: "portability"
   1.1.1t:
+    - patch_file: patches/1.1.1-tvos-watchos.patch
+      patch_description: "TVOS and WatchOS don't like fork()"
+      patch_type: "portability"
+  1.1.1t+quic:
     - patch_file: patches/1.1.1-tvos-watchos.patch
       patch_description: "TVOS and WatchOS don't like fork()"
       patch_type: "portability"
